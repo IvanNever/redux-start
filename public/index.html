@@ -4,15 +4,29 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
     <title>Redux App</title>
   </head>
   <body>
-    <div id="root" class="jumbotron">
-        <h1 id="counter">0</h1>
-        <button id="dec" class="btn btn-primary">DEC</button>
-        <button id="inc" class="btn btn-primary">INC</button>
-        <button id="rnd" class="btn btn-primary">RND</button>
+    <div id="root">
+        <div class="content">
+            <div class="counter-block">
+                <span id="counter">0</span>
+            </div>
+            <div class="button-block">
+                <div id="plus" class="btn plus">
+                    <img src="./img/plus.png" alt="plus">
+                </div>
+                <div id="minus" class="btn minus">
+                    <img src="./img/minus.png" alt="minus">
+                </div>
+                <div id="reset" class="btn reset">
+                    <img src="./img/reset.png" alt="reset">
+                </div>
+            </div>
+
+        </div>
     </div>
   </body>
 </html>

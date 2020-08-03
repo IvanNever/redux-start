@@ -1,34 +1,33 @@
 import {createStore} from 'redux';
 const reducer = (state = 0, action) => {
     switch (action.type) {
-        case 'INC':
+        case 'PLUS':
             return state + 1;
-        case 'DEC':
+        case 'MINUS':
             return state - 1;
-        case 'RND':
-            return state + action.value;
+        case 'RESET':
+            return 0;
         default:
             return state;
     }
 }
 
-const inc = () => ({ type: 'INK' });
-const dec = () => ({ type: 'DEC' });
-const rnd = (value) => ({ type: 'RND', value });
+const plus = () => ({ type: 'PLUS' });
+const minus = () => ({ type: 'MINUS' });
+const reset = () => ({ type: 'RESET'});
 
 const store = createStore(reducer);
 
-document.getElementById('inc').addEventListener('click', () => {
-    store.dispatch(inc());
+document.getElementById('plus').addEventListener('click', () => {
+    store.dispatch(plus());
 });
 
-document.getElementById('dec').addEventListener('click', () => {
-    store.dispatch(dec());
+document.getElementById('minus').addEventListener('click', () => {
+    store.dispatch(minus());
 });
 
-document.getElementById('rnd').addEventListener('click', () => {
-    const value = Math.floor(Math.random() * 10);
-    store.dispatch(rnd(value));
+document.getElementById('reset').addEventListener('click', () => {
+    store.dispatch(reset());
 });
 
 const update = () => {
@@ -38,7 +37,3 @@ const update = () => {
 store.subscribe(() => {
     update();
 });
-
-// store.dispatch({type: 'INC'});
-// store.dispatch({type: 'INC'});
-// store.dispatch({type: 'INC'});
